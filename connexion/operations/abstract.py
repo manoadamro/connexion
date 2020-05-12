@@ -323,10 +323,8 @@ class AbstractOperation(SecureOperation, metaclass=abc.ABCMeta):
                 return self.produces[0]
             except IndexError:
                 return DEFAULT_MIMETYPE
-        elif len(self.produces) == 1:
-            return self.produces[0]
         else:
-            return DEFAULT_MIMETYPE
+            return self.produces[0]
 
     @property
     def _uri_parsing_decorator(self):
